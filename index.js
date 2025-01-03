@@ -1,27 +1,54 @@
-import * as React from 'react'
-import { useGetPokemonByNameQuery } from './services/pokemon'
 
-export default function App() {
-  // Using a query hook automatically fetches data and returns query values
-  const { data, error, isLoading } = useGetPokemonByNameQuery('bulbasaur')
-  // Individual hooks are also accessible under the generated endpoints:
-  // const { data, error, isLoading } = pokemonApi.endpoints.getPokemonByName.useQuery('bulbasaur')
+ 
+function knapsack(weights, values, capacity, n, memo = {}) {
+    if (n === 0 || capacity === 0) return 0;
 
-  return (
-    <div className="App">
-      {error ? (
-        <>Oh no, there was an error</>
-      ) : isLoading ? (
-        <>Loading...</>
-      ) : data ? (
-        <>
-          <h3>{data.species.name}</h3>
-          <img src={data.sprites.front_shiny} alt={data.species.name} />
-        </>
-      ) : null}
-    </div>
-  )
+    const key = `${n}-${capacity}`;
+    if (key in memo) return memo[key];
+
+    if (weights[n - 1] <= capacity) {
+        memo[key] = Math.max(
+            values[n - 1] + knapsack(weights, values, capacity - weights[n - 1], n - 1, memo),
+            knapsack(weights, values, capacity, n - 1, memo)
+        );
+    } else {
+        memo[key] = knapsack(weights, values, capacity, n - 1, memo);
+function knapsack(weights, values, capacity, n) {
+    if (n === 0 || capacity === 0) return 0;
+
+    if (weights[n - 1] <= capacity) {
+        return Math.max(
+            values[n - 1] + knapsack(weights, values, capacity - weights[n - 1], n - 1),
+            knapsack(weights, values, capacity, n - 1)
+        );
+    } else {
+        return knapsack(weights, values, capacity, n - 1);
+    }
+
+    return dp[n][capacity];
 }
+
+const weights = [2, 3, 4, 5];
+const values = [3, 4, 5, 6];
+const capacity = 5;
+const weights = [2, 3, 4, 5];
+const values = [3, 4, 5, 6];
+const capacity = 5;
+const weights = [2, 3, 4, 5];
+const values = [3, 4, 5, 6];
+const capacity = 5;
+
+console.log(knapsack(weights, values, capacity, weights.length)); // Output: 7
+
+function fibonacci(n) {
+    // Base cases
+    if (n === 0) return 0;
+    if (n === 1) return 1;
+
+    // Recursive case
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
 console.log(fibonacci(6)); // Output: 8
 
 
