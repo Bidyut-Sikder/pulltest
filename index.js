@@ -1,26 +1,12 @@
-import { ReactLenis } from 'lenis/react';
+const ss=`Dynamic programming is a powerful tec
+hnique that optimizes recursive algorithms by st
+oring previously computed results, significantly improv
+ing performance. It’s commonly used for optimization pro
+blems like the Fibonacci sequence, knapsack problem, lon
+gest common subsequence, etc.
 
-const App = () => {
-  const lenis = ReactLenis();
-
-  // Use the Lenis instance for custom behaviors
-  lenis.on('scroll', () => {
-    console.log('Scrolling!');
-  });
-
-  return (
-    <div>
-      <h1>Smooth Scrolling Example</h1>
-      <p>Content goes here...</p>
-    </div>
-  );
-};
-
-export default App;
-
-
-console.log(knapsack(weights, values, capacity, weights.length)); // Output: 7
-
+Let me know if you'd like more examples or if y
+ou want to explore a specific DP problem in detail`
 function fibonacci(n) {
     // Base cases
     if (n === 0) return 0;
