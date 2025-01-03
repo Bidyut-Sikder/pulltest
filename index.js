@@ -8,9 +8,13 @@ function hi() {
 }
 
 
+<<<<<<< HEAD
 function confilct(){
-    console.log('lets see confilct')
+    console.log('lets see confilct resolved')
 }
+=======
+cosnt sss='i added from github merge facility is modified"
+>>>>>>> a8279815c4e6efd91de950591c625807dc83b446
 
 
 hi()
