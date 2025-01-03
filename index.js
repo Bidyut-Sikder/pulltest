@@ -1,3 +1,23 @@
+import React, { useState } from 'react';
+
+const MessageUpdater = () => {
+  // State to hold the message
+  const [message, setMessage] = useState("Hello, world!");
+
+  // Function to update the message
+  const updateMessage = () => {
+    setMessage("You've clicked the button!");
+  };
+
+  return (
+    <div>
+      <h1>{message}</h1>
+      <button onClick={updateMessage}>Click me</button>
+    </div>
+  );
+};
+
+export default MessageUpdater;
 
  
 function knapsack(weights, values, capacity, n, memo = {}) {
