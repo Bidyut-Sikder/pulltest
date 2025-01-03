@@ -1,8 +1,9 @@
 
 
 const con='lets make a cofilct'
+const con2='lets make a  -a testing'
 
-const commit_a='check stages of the -a'
+const commit_a='check stages of the -a '
 const dds='what the fuck'
 
 function hi() {
