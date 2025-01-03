@@ -8,7 +8,9 @@ function hi() {
 }
 
 
-
+function confilct(){
+    console.log('lets see confilct')
+}
 
 
 hi()
