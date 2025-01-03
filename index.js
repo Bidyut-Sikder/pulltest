@@ -11,24 +11,41 @@ class Animal {
     }
   }
   
-  class Dog extends Animal {
-    speak() {
-      console.log(`${this.name} barks.`);
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+class ClassName {
+  constructor(param1, param2) {
+    // Initialize properties
+    this.prop1 = param1;
+    this.prop2 = param2;
   }
-  
-  const dog = new Dog("Rex");
-  dog.speak(); // Outputs: Rex barks.
-  
 
+  // Method
+  method1() {
+    console.log(`Property 1: ${this.prop1}`);
+  }
 
+  // Static method
 
+}
 
+// Create an instance
+const obj = new ClassName("Value1", "Value2");
+obj.method1(); // Outputs: Property 1: Value1
 
-
-
-
-
+// Access static method
+// Outputs: This is a static method.
 
 
 
