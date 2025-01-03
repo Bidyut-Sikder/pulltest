@@ -1,19 +1,29 @@
-function knapsack(weights, values, capacity, n) {
-    if (n === 0 || capacity === 0) return 0;
 
-    if (weights[n - 1] <= capacity) {
-        return Math.max(
-            values[n - 1] + knapsack(weights, values, capacity - weights[n - 1], n - 1),
-            knapsack(weights, values, capacity, n - 1)
-        );
-    } else {
-        return knapsack(weights, values, capacity, n - 1);
+
+function knapsack(weights, values, capacity, n) {
+    const dp = Array(n + 1).fill().map(() => Array(capacity + 1).fill(0));
+
+    for (let i = 1; i <= n; i++) {
+        for (let w = 1; w <= capacity; w++) {
+            if (weights[i - 1] <= w) {
+                dp[i][w] = Math.max(
+                    values[i - 1] + dp[i - 1][w - weights[i - 1]],
+                    dp[i - 1][w]
+                );
+            } else {
+                dp[i][w] = dp[i - 1][w];
+            }
+        }
     }
+
+    return dp[n][capacity];
 }
 
+const weights = [2, 3, 4, 5];
+const values = [3, 4, 5, 6];
+const capacity = 5;
 
-
-
+console.log(knapsack(weights, values, capacity, weights.length)); // Output: 7
 
 function fibonacci(n) {
     // Base cases
@@ -27,16 +37,6 @@ function fibonacci(n) {
 console.log(fibonacci(6)); // Output: 8
 
 
-
-function confilct(){
-    console.log('lets see confilct resolved')
-}
-
-const text='i dont no what just happned'
-hi()
-
-
-const newthing='i added this from gihub'
 
 
 function gameChanger(){
@@ -53,18 +53,5 @@ function factorial(n) {
     // Recursive case
     return n * factorial(n - 1);
 }
-
-console.log(factorial(5)); // Output: 120
-function factorial(n) {
-    // Base case
-    if (n <= 1) {
-        return 1;
-    }
-
-    // Recursive case
-    return n * factorial(n - 1);
-}
-
-console.log(factorial(5)); // Output: 120
 
 
