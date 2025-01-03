@@ -4,6 +4,44 @@ var sttbb='testing marging'
 
 
 
+var temporal=` git pull origin main --no-rebase
+
+From https://github.com/Bidyut-Sikder/pulltest
+ * branch            main       -> FETCH_HEAD
+Updating 4ccd5c2..c083102
+error: Your local changes to the following files would be overwritten by merge:
+        index.js
+Please commit your changes or stash them before you merge.
+Aborting`
+
+
+
+
+import { ReactLenis } from 'lenis/react';
+
+const App = () => {
+  const lenis = ReactLenis();
+
+  // Use the Lenis instance for custom behaviors
+  lenis.on('scroll', () => {
+    console.log('Scrolling!');
+  });
+
+  return (
+    <div>
+      <h1>Smooth Scrolling Example</h1>
+      <p>Content goes here...</p>
+    </div>
+  );
+};
+
+export default App;
+
+
+
+
+
+
 
 
 
