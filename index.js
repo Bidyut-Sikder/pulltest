@@ -1,4 +1,7 @@
-let added='added on the top'
+
+
+const con='lets make a cofilct'
+
 
 
 const dds='what the fuck'
