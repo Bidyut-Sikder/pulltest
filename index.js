@@ -1,7 +1,7 @@
 
 
 
-
+const dds='what the fuck'
 
 function hi() {
     console.log('bidyut sikder')
@@ -12,7 +12,7 @@ function confilct(){
     console.log('lets see confilct resolved')
 }
 
-
+const text='i dont no what just happned'
 hi()
 
 
