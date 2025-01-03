@@ -17,5 +17,27 @@ function gameChanger(){
 }
 
 
+function factorial(n) {
+    // Base case
+    if (n <= 1) {
+        return 1;
+    }
+
+    // Recursive case
+    return n * factorial(n - 1);
+}
+
+console.log(factorial(5)); // Output: 120
+function factorial(n) {
+    // Base case
+    if (n <= 1) {
+        return 1;
+    }
+
+    // Recursive case
+    return n * factorial(n - 1);
+}
+
+console.log(factorial(5)); // Output: 120
 
 
