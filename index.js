@@ -22,6 +22,12 @@ function knapsack(weights, values, capacity, n) {
 const weights = [2, 3, 4, 5];
 const values = [3, 4, 5, 6];
 const capacity = 5;
+const weights = [2, 3, 4, 5];
+const values = [3, 4, 5, 6];
+const capacity = 5;
+const weights = [2, 3, 4, 5];
+const values = [3, 4, 5, 6];
+const capacity = 5;
 
 console.log(knapsack(weights, values, capacity, weights.length)); // Output: 7
 
