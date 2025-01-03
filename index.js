@@ -2,14 +2,19 @@
 
 
 
-function fibonacci(n) {
-  if (n === 0) return 0; // Base case 1
-  if (n === 1) return 1; // Base case 2
-  return fibonacci(n - 1) + fibonacci(n - 2); // Recursive case
-}
 
-console.log(fibonacci(6)); // Outputs: 8
 
+
+
+function factorial(n) {
+    if (n === 0 || n === 1) {
+      return 1; // Base case
+    }
+    return n * factorial(n - 1); // Recursive case
+  }
+  
+  console.log(factorial(5)); // Outputs: 120
+  
 
 
 
