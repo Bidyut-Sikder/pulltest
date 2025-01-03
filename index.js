@@ -1,23 +1,28 @@
 
  
-function knapsack(weights, values, capacity, n) {
-    const dp = Array(n + 1).fill().map(() => Array(capacity + 1).fill(0));
+function knapsack(weights, values, capacity, n, memo = {}) {
+    if (n === 0 || capacity === 0) return 0;
 
-    for (let i = 1; i <= n; i++) {
-        for (let w = 1; w <= capacity; w++) {
-            if (weights[i - 1] <= w) {
-                dp[i][w] = Math.max(
-                    values[i - 1] + dp[i - 1][w - weights[i - 1]],
-                    dp[i - 1][w]
-                );
-            } else {
-                dp[i][w] = dp[i - 1][w];
-            }
-        }
+    const key = `${n}-${capacity}`;
+    if (key in memo) return memo[key];
+
+    if (weights[n - 1] <= capacity) {
+        memo[key] = Math.max(
+            values[n - 1] + knapsack(weights, values, capacity - weights[n - 1], n - 1, memo),
+            knapsack(weights, values, capacity, n - 1, memo)
+        );
+    } else {
+        memo[key] = knapsack(weights, values, capacity, n - 1, memo);
     }
 
-    return dp[n][capacity];
+    return memo[key];
 }
+
+const weights = [2, 3, 4, 5];
+const values = [3, 4, 5, 6];
+const capacity = 5;
+
+console.log(knapsack(weights, values, capacity, weights.length)); // Output: 7
 
 const weights = [2, 3, 4, 5];
 const values = [3, 4, 5, 6];
