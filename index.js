@@ -13,16 +13,20 @@ function knapsack(weights, values, capacity, n, memo = {}) {
         );
     } else {
         memo[key] = knapsack(weights, values, capacity, n - 1, memo);
+function knapsack(weights, values, capacity, n) {
+    if (n === 0 || capacity === 0) return 0;
+
+    if (weights[n - 1] <= capacity) {
+        return Math.max(
+            values[n - 1] + knapsack(weights, values, capacity - weights[n - 1], n - 1),
+            knapsack(weights, values, capacity, n - 1)
+        );
+    } else {
+        return knapsack(weights, values, capacity, n - 1);
     }
 
-    return memo[key];
+    return dp[n][capacity];
 }
-
-const weights = [2, 3, 4, 5];
-const values = [3, 4, 5, 6];
-const capacity = 5;
-
-console.log(knapsack(weights, values, capacity, weights.length)); // Output: 7
 
 const weights = [2, 3, 4, 5];
 const values = [3, 4, 5, 6];
