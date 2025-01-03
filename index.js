@@ -1,45 +1,7 @@
-
-// MathLib.js
-const MathLib = (function () {
-  // Private methods (not exposed outside the library)
-  function isNumber(value) {
-    return typeof value === "number" && !isNaN(value);
-  }
-
-  // Exposed methods
-  return {
-    add: function (a, b) {
-      if (!isNumber(a) || !isNumber(b)) {
-        throw new Error("Both arguments must be numbers");
-      }
-      return a + b;
-    },
-
-    subtract: function (a, b) {
-      if (!isNumber(a) || !isNumber(b)) {
-        throw new Error("Both arguments must be numbers");
-      }
-      return a - b;
-    },
-
-    multiply: function (a, b) {
-      if (!isNumber(a) || !isNumber(b)) {
-        throw new Error("Both arguments must be numbers");
-      }
-      return a * b;
-    },
-
-    divide: function (a, b) {
-      if (!isNumber(a) || !isNumber(b)) {
-        throw new Error("Both arguments must be numbers");
-      }
-      if (b === 0) {
-        throw new Error("Division by zero is not allowed");
-      }
-      return a / b;
-    },
-  };
-})();
+<script src="MathLib.js"></script>
+<script>
+  console.log(MathLib.add(10, 20)); // Output: 30
+</script>
 
 // Usage Example
 console.log(MathLib.add(5, 3)); // Output: 8
