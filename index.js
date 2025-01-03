@@ -2,8 +2,7 @@
 
 const con='lets make a cofilct'
 
-
-
+const commit_a='check stages of the -a'
 const dds='what the fuck'
 
 function hi() {
@@ -25,4 +24,7 @@ const newthing='i added this from gihub'
 function gameChanger(){
     console.log('bidyut from game changer')
 }
+
+
+
 
