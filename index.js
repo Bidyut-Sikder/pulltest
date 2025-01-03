@@ -1,21 +1,27 @@
-const ss=`Dynamic programming is a powerful tec
-hnique that optimizes recursive algorithms by st
-oring previously computed results, significantly improv
-ing performance. It’s commonly used for optimization pro
-blems like the Fibonacci sequence, knapsack problem, lon
-gest common subsequence, etc.
+import * as React from 'react'
+import { useGetPokemonByNameQuery } from './services/pokemon'
 
-Let me know if you'd like more examples or if y
-ou want to explore a specific DP problem in detail`
-function fibonacci(n) {
-    // Base cases
-    if (n === 0) return 0;
-    if (n === 1) return 1;
+export default function App() {
+  // Using a query hook automatically fetches data and returns query values
+  const { data, error, isLoading } = useGetPokemonByNameQuery('bulbasaur')
+  // Individual hooks are also accessible under the generated endpoints:
+  // const { data, error, isLoading } = pokemonApi.endpoints.getPokemonByName.useQuery('bulbasaur')
 
-    // Recursive case
-    return fibonacci(n - 1) + fibonacci(n - 2);
+  return (
+    <div className="App">
+      {error ? (
+        <>Oh no, there was an error</>
+      ) : isLoading ? (
+        <>Loading...</>
+      ) : data ? (
+        <>
+          <h3>{data.species.name}</h3>
+          <img src={data.sprites.front_shiny} alt={data.species.name} />
+        </>
+      ) : null}
+    </div>
+  )
 }
-
 console.log(fibonacci(6)); // Output: 8
 
 
