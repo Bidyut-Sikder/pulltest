@@ -1,5 +1,5 @@
 
-
+ 
 function knapsack(weights, values, capacity, n) {
     const dp = Array(n + 1).fill().map(() => Array(capacity + 1).fill(0));
 
