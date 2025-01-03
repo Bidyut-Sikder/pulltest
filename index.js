@@ -4,6 +4,33 @@ var stashcheck='hell stash'
 
 
 
+
+
+
+
+let stash=`
+ffasfdf
+f
+da
+fad
+d
+f
+ds
+fd
+af
+<a href="dfdggafdf
+da
+fd
+fdas
+f"></a>
+`
+
+
+
+
+
+
+
 var temporal=` git pull origin main --no-rebase
 
 From https://github.com/Bidyut-Sikder/pulltest
