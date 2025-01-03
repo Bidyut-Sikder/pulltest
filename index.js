@@ -17,5 +17,7 @@ hi()
 
 
 
-
+function gameChanger(){
+    console.log('bidyut from game changer')
+}
 
