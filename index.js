@@ -16,7 +16,7 @@ function confilct(){
 cosnt sss='i added from github merge facility is modified"
 >>>>>>> a8279815c4e6efd91de950591c625807dc83b446
 
-
+const text='i dont no what just happned'
 hi()
 
 
